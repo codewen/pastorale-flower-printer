@@ -48,7 +48,10 @@ export default async function Home() {
           else return -1;
         })
         .map((order: any) => (
-          <div className="flex flex-nowrap gap-4 w-full md:w-auto mb-10">
+          <div
+            className="flex flex-nowrap gap-4 w-full md:w-auto mb-10"
+            key={order.name}
+          >
             <div>{order.name}</div>
             <div className="w-32">
               {formatDate(findNoteAttr(order.note_attributes, "date"))?.format(
